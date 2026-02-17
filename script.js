@@ -1,24 +1,27 @@
 //your code here
-const input = document.getElementById("newTodoInput");
-const button = document.getElementById("addTodoBtn");
-const todoList = document.getElementById("todoList");
+document.addEventListener("DOMContentLoaded", function () {
 
-button.addEventListener("click", () => {
+  const input = document.getElementById("newTodoInput");
+  const button = document.getElementById("addTodoBtn");
+  const todoList = document.getElementById("todoList");
 
-  const todoText = input.value.trim();
+  button.addEventListener("click", function () {
 
-  // prevent empty todo
-  if (todoText === "") return;
+    const todoText = input.value.trim();
 
-  // create li
-  const li = document.createElement("li");
-  li.innerText = todoText;
+    // prevent empty submission
+    if (todoText === "") return;
 
-  // append li to list
-  todoList.appendChild(li);
+    // create li element
+    const li = document.createElement("li");
+    li.textContent = todoText;
 
-  // clear input
-  input.value = "";
+    // add to list
+    todoList.appendChild(li);
+
+    // clear input
+    input.value = "";
+  });
+
 });
-
 
